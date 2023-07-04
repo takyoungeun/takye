@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>카카오톡 버튼있는 메시지 전송하기</title>
+<script id="javascript-sdk" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+<body>
+<p><strong>아래 카카오톡 아이콘을 눌러 전송하세요</strong> By. Blackcats4567</p>
+<a id="kakao-link-btn" href="javascript:sendLink()">
+  <img
+    src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+  />
+</a>
+<script type="text/javascript">
+ Kakao.init('9022668bb766ba5040341930ae568131');
+  function sendLink() {
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '이강이 돌잔치 초대장',
+        description: '이강이의 첫번째 생일파티에 초대합니다.',
+        imageUrl:
+          'https://search.naver.com/search.naver?where=image&sm=tab_jum&query=%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%86%A1#',
+        link: {
+          mobileWebUrl: '사진클릭시 모바일 주소',
+          webUrl: 'https://heureumdesign.creatorlink.net',
+        },
+      },
+      social: {
+        likeCount: 99999, //99999가 최대입니다
+        commentCount: 99999, //99999가 최대입니다
+        sharedCount: 99999, //99999가 최대입니다
+      },
+      buttons: [
+        {
+          title: '자세히보기',
+          link: {
+            mobileWebUrl: 'https://heureumdesign.creatorlink.net',
+            webUrl: 'https://heureumdesign.creatorlink.net',
+          },
+        },
+      ],
+    })
+  }
+</script>
+<!-- www.blackcats4567.com -->
+<!-- 이미지/버튼 클릭 시 주소는 Kakao Developers의 애플리케이션 > 플랫폼 > Web에 넣어야 클릭했을때 성공적으로 표시됩니다 -->
+  </body>
+</html>
